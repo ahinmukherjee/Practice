@@ -6,7 +6,7 @@ import cross from "../Assets/cross.png"
 
 let data = ["","","","","","","","",""];
 
-const game = () => {
+const Game = () => {
 
   let [count,setCount] = useState(0);
   let [lock,setLock] = useState(false);
@@ -54,4 +54,6 @@ const game = () => {
   )
 }
 
-export default game
+export default Game
+
+
