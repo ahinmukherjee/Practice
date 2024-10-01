@@ -24,6 +24,7 @@ const Game = () => {
   let box9 =useRef(null);
  
   let box_arr = [box1,box2,box3,box4,box5,box6,box7,box8, box9] 
+
   const toggle = (e,num) =>{
     if (lock){
       return 0;
@@ -49,35 +50,35 @@ const Game = () => {
       }
     else if(data[3]==data[4] && data[4]==data[5] && data[5]!=="")
       {
-      won(data);
+      won(data[5]);
       }
     else if(data[6]==data[7] && data[7]==data[8] && data[8]!=="")
       {
-      won(data);
+      won(data[8]);
       }
     else if(data[0]==data[3] && data[3]==data[6] && data[6]!=="")
       {
-        won(data);
+        won(data[6]);
       }
     else if(data[1]==data[4] && data[4]==data[7] && data[7]!=="")
       {
-        won(data);
+        won(data[7]);
       }
     else if(data[2]==data[5] && data[5]==data[8] && data[8]!=="")
       {
-        won(data);
+        won(data[8]);
       }
     else if(data[0]==data[4] && data[4]==data[8] && data[8]!=="")
       {
-        won(data);
+        won(data[8]);
       }
     else if(data[0]==data[1] && data[1]==data[2] && data[2]!=="")
       {
-        won(data);
+        won(data[2]);
       }
     else if(data[2]==data[4] && data[4]==data[6] && data[6]!=="")
       {
-        won(data);
+        won(data[6]);
       }
         
   }
@@ -86,18 +87,18 @@ const Game = () => {
     setLock(true);
     if(winnner==="x")
     {
-      titleRef.current.innerHTML = `Congratulations: <img src=${cross}>`
+      titleRef.current.innerHTML = `Congratulations: <img src=${cross}> wins`;
     }
     else
     {
-      titleRef.current.innerHTML = `Congratulations: <img src=${circle}}>`
+      titleRef.current.innerHTML = `Congratulations: <img src = ${circle}> wins to`
     }
   }
 
   const reset = () =>{
     setLock(false);
     data = ["","","","","","","","",""];
-    // titleRef.current.innerHTML = 'Game with <span>React</span>'
+    titleRef.current.innerHTML = 'Game with <span>React</span>'
     box_arr.map((e)=>{
       e.current.innerHTML= "";
     })
